@@ -10,10 +10,12 @@
         "bootstrap": "^5.2.3",
         "core-js": "^3.23.0",
         "css-loader": "*",
+        "file-loader": "^6.0.0",
         "jquery": "^3.6.4",
         "regenerator-runtime": "^0.13.9",
         "sass": "^1.59.3",
         "sass-loader": "^13.0.0",
+        "url-loader": "^4.1.1",
         "vue": "^3.0",
         "vue-loader": "^17.0.0",
         "vue-template-compiler": "^2.7.14",
@@ -29,5 +31,7 @@
         "watch": "encore dev --watch",
         "build": "encore production --progress"
     },
-    "dependencies": {}
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.3.0"
+    }
 }

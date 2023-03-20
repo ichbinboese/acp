@@ -1,5 +1,66 @@
 @import "~bootstrap/scss/bootstrap";
 
-body {
-    background-color: lightcyan;
+@font-face 
+{
+    font-family: "RobotoSlap";
+    src: url('../fonts/RobotoSlab.ttf')  format('truetype'),/* TTF */
 }
+
+$font-stack: 'Roboto', Arial, Helvetica, sans-serif;
+$house-color: #F60;
+$primary-color: #333;
+$white-color: #FFF;
+$body-background-color: #e6e5e2;
+$dark-background-color: #000;
+$media-large: 1620px;
+$media-medium: 1020px;
+$media-small: 520px;
+$border-medium: 400px;
+$theme-colors: (primary: $house-color, secondary: $gray-600, success: $green, info: $cyan, warning: $yellow, danger: $red, light: $gray-100, dark: $gray-800);
+
+$header-balken-height: 33vh;
+$view-height: 100vh;
+$view-width: 100vw;
+
+
+body {
+    background-color: none;
+    
+    .container-fluid {
+        
+        .slider-header {
+            position: relative;
+
+
+        }
+    }
+}
+
+.header-balken {
+    font-family: "RobotoSlap", Arial, Helvetica, sans-serif;
+    position: absolute;
+    top:0;
+    left: 0;
+    margin-top: calc( ($view-height/2) - ($header-balken-height/2));
+    color: white;
+    font-size: 6rem;
+    line-height: 1.0;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    height: $header-balken-height;
+    width: 100%;
+    z-index: 50;
+
+    @media screen and (max-width: calc($media-medium)) {
+        height: 10vh;
+        margin-top: calc( (35vh/2) - (10vh/2));
+        font-size: 2rem;
+        line-height: 1.0;
+    }
+    .col-4 {
+        padding-top: 2.0rem;
+        @media screen and (max-width: calc($media-medium)) {
+            padding-top: 0.35rem;
+        }
+    }
+}
+

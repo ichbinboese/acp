@@ -61,6 +61,20 @@ Encore
 
     .enableVueLoader()
 
+    .copyFiles(
+        [{
+            from: './assets/fonts',
+            // optional target path, relative to the output dir
+            to: 'fonts/[path][name].[ext]',
+            // only copy files matching this pattern
+        },
+        {
+            from: './assets/images',
+            // optional target path, relative to the output dir
+            to: 'images/[path][name].[ext]',
+            // only copy files matching this pattern
+        }])
+
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
 

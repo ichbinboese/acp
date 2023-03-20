@@ -1,7 +1,113 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello IndexController!{% endblock %}
+{% block title %}{{ parent() }} | Startseite {% endblock %}
 
-{% block body %}
-<div {{ vue_component('MyComponent', { 'name': 'Hello World'}) }}></div>
+{% block content %}
+<section class="pt-5 pb-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <h3 class="mb-3">Unsere Domiziele </h3>
+            </div>
+            <div class="col-6 text-right">
+                <button class="btn btn-white text-white mb-3 mr-1 carousel-control-rev hidden" data-bs-target="#carouselDomizil" data-slide="prev">
+                    vor <i class="fa-solid fa-caret-left"></i>
+                </button>
+                <button class="btn btn-white text-white mb-3 carousel-control-rev hidden" data-bs-target="#carouselDomizil" data-slide="next">
+                    zurück <i class="fa-solid fa-caret-right"></i>
+                </button>
+            </div>
+            <div class="col-12">
+                <div id="carouselDomizil" class="carousel slide" data-bs-ride="carousel">
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{{ asset('build/images/cards/card_hilde.jpg') }}">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Haus "Hilde"</h4>
+                                            <p class="card-text">Ein kleines Fachwerkhäuschen mit mehreren Monteurzimmern</p>
+                                            <ul>
+                                                <li>Einzel, sowie Doppelzimmer</li>
+                                                <li>Gemeinschaftsraum</li>
+                                                <li>Küche</li>
+                                                <li>Gemeinschaftsbadezimmer</li>
+                                            </ul>
+                                            <button class="btn btn-primary">weitere Details</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{{ asset('build/images/cards/card_melina.jpg') }}">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Ferienwohnung "Melina"</h4>
+                                            <p class="card-text">Modern eingerichtete Ferienwohnung, mitten im Zentrum von Winsen</p>
+                                            <ul>
+                                                <li>1 Schlafzimmer</li>
+                                                <li>Gemeinschaftsraum</li>
+                                                <li>Küche</li>
+                                                <li>Badezimmer mit Dusche</li>
+                                            </ul>
+                                            <button class="btn btn-primary">weitere Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{{ asset('build/images/cards/card_city.jpg') }}">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Wohnung "City"</h4>
+                                            <p class="card-text">Eine Wohnung im ersten Stock, mit mehreren Monteurzimmern</p>
+                                            <ul>
+                                                <li>Einzel, sowie Doppelzimmer</li>
+                                                <li>Gemeinschaftsraum</li>
+                                                <li>Küche</li>
+                                                <li>Gemeinschaftsbadezimmer</li>
+                                            </ul>
+                                            <button class="btn btn-primary">weitere Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="{{ asset('build/images/cards/card_e3.jpg') }}">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Haus "E3"</h4>
+                                            <p class="card-text">Ferienwohnung, mitten im Zentrum von Winsen</p>
+                                            <ul>
+                                                <li>1 Schlafzimmer</li>
+                                                <li>Gemeinschaftsraum</li>
+                                                <li>Küche</li>
+                                                <li>Badezimmer mit Dusche</li>
+                                            </ul>
+                                            <button class="btn btn-primary">weitere Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+          
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
