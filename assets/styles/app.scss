@@ -18,8 +18,8 @@ $media-small: 520px;
 $border-medium: 400px;
 $theme-colors: (primary: $house-color, secondary: $gray-600, success: $green, info: $cyan, warning: $yellow, danger: $red, light: $gray-100, dark: $gray-800);
 
-$header-balken-height: 33vh;
-$view-height: 100vh;
+$header-balken-height: 18rem;
+$view-height: 80vh;
 $view-width: 100vw;
 
 
@@ -36,26 +36,51 @@ body {
     }
 }
 
+.navigation {
+    width: 100vw;
+    position: fixed;
+    z-index: 500;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    color: white;
+    .nav-link {
+        color: white;
+    }
+
+    .nav-link.active {
+        color: white;
+    }
+
+}
+
+ul.dropdown-menu.show {
+    background-color: rgba(0,0,0,0.6);
+    color: #FFFFFF;
+}
+
+a.dropdown-item {
+    color: #FFFFFF;
+}
+
+.carousel-item img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
 .header-balken {
     font-family: "RobotoSlap", Arial, Helvetica, sans-serif;
     position: absolute;
+    padding: 3rem 0;
     top:0;
     left: 0;
-    margin-top: calc( ($view-height/2) - ($header-balken-height/2));
+    margin-top: calc( (100vh - $header-balken-height)/2);
     color: white;
     font-size: 6rem;
     line-height: 1.0;
     background-color: rgba($color: #000000, $alpha: 0.6);
-    height: $header-balken-height;
     width: 100%;
     z-index: 50;
-
-    @media screen and (max-width: calc($media-medium)) {
-        height: 10vh;
-        margin-top: calc( (35vh/2) - (10vh/2));
-        font-size: 2rem;
-        line-height: 1.0;
-    }
     .col-4 {
         padding-top: 2.0rem;
         @media screen and (max-width: calc($media-medium)) {
