@@ -61,11 +61,17 @@ a.dropdown-item {
     color: #FFFFFF;
 }
 
-.carousel-item img {
+.header-item img {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
     object-position: 50% 50%;
+}
+
+.img-house {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
 }
 
 .header-balken {

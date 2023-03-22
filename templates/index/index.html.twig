@@ -4,105 +4,115 @@
 
 {% block content %}
 <section class="pt-5 pb-5">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col-6">
-                <h3 class="mb-3">Unsere Domiziele </h3>
-            </div>
-            <div class="col-6 text-right">
-                <button class="btn btn-white text-white mb-3 mr-1 carousel-control-rev hidden" data-bs-target="#carouselDomizil" data-slide="prev">
-                    vor <i class="fa-solid fa-caret-left"></i>
-                </button>
-                <button class="btn btn-white text-white mb-3 carousel-control-rev hidden" data-bs-target="#carouselDomizil" data-slide="next">
-                    zurück <i class="fa-solid fa-caret-right"></i>
-                </button>
-            </div>
-            <div class="col-12">
-                <div id="carouselDomizil" class="carousel slide" data-bs-ride="carousel">
+            <div class="container">
+                <div class="col-12">
+                    <h2>Unsere Unterkünfte</h2>
+                    <p>Suchen Sie Ruhe und Entspannung, ohne auf die Möglichkeiten eines Aktivurlaubes verzichten zu müssen?</p>
 
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
+                    <p>Unsere Unterkünfte in Winsen Aller bieten kostenfreies WLAN und sind 27 km vom Serengeti-Park, 45km vom Heide Park Soltau, 41 km vom Vogelpark Walsrode und 49 km vom Deutschen Panzermuseum entfernt. Die historische Stadt Celle ist 15 km  entfernt. Der nächstgelegene Flughafen ist der 44 km vom Ferienhaus entfernte Flughafen Hannover.
+                    Sie erreichen den historischen Altstadtkern von Celle in 45 min. mit dem Rad. Einkaufsmöglichkeiten sind zahlreich vorhanden. Das Ferienhaus ist ein idealer Ausgangspunkt für Wanderungen und Radtouren in der Umgebung. Infos zur Region liegen aus.
+                        Viele umliegende kleine Dörfer, romantisch mit einem leichten Hauch ländlicher Atmosphäre, jedes auf seine Art eine Besonderheit. Große Teile davon liegen im Naturpark Südheide, der für seine artenreiche Flora und Fauna bekannt ist und durch den herrliche Wandermöglichkeiten führen.</p>
+                </div>
+                <div class="col-6">
+                    <h3 class="mb-3">Unsere Vermietungen </h3>
+                </div>
+                <div class="col-6 text-right">
+                    <button class="btn btn-white text-white mb-3 mr-1 carousel-control-rev hidden" data-bs-target="#carouselDomizil" data-slide="prev">
+                        vor <i class="fa-solid fa-caret-left"></i>
+                    </button>
+                    <button class="btn btn-white text-white mb-3 carousel-control-rev hidden" data-bs-target="#carouselDomizil" data-slide="next">
+                        zurück <i class="fa-solid fa-caret-right"></i>
+                    </button>
+                </div>
+                <div class="col-12">
+                    <div id="carouselDomizil" class="carousel slide" data-bs-ride="carousel">
 
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('build/images/cards/card_hilde.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Haus "Hilde"</h4>
-                                            <p class="card-text">Ein kleines Fachwerkhäuschen mit mehreren Monteurzimmern</p>
-                                            <ul>
-                                                <li>Einzel, sowie Doppelzimmer</li>
-                                                <li>Gemeinschaftsraum</li>
-                                                <li>Küche</li>
-                                                <li>Gemeinschaftsbadezimmer</li>
-                                            </ul>
-                                            <a class="btn btn-primary" href="{{ path('app_houses', {'houses': 'hilde'}) }}">weitere Details</a>
-                                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
 
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('build/images/cards/card_melina.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Ferienwohnung "Melina"</h4>
-                                            <p class="card-text">Modern eingerichtete Ferienwohnung, mitten im Zentrum von Winsen</p>
-                                            <ul>
-                                                <li>1 Schlafzimmer</li>
-                                                <li>Gemeinschaftsraum</li>
-                                                <li>Küche</li>
-                                                <li>Badezimmer mit Dusche</li>
-                                            </ul>
-                                            <a class="btn btn-primary" href="{{ path('app_houses', {'houses': 'melina'}) }}">weitere Details</a>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="{{ asset('build/images/cards/card_hilde.jpg') }}">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Haus "Hilde"</h4>
+                                                <p class="card-text">Ein kleines Fachwerkhäuschen mit mehreren Monteurzimmern</p>
+                                                <ul>
+                                                    <li>Einzel, sowie Doppelzimmer</li>
+                                                    <li>Gemeinschaftsraum</li>
+                                                    <li>Küche</li>
+                                                    <li>Gemeinschaftsbadezimmer</li>
+                                                </ul>
+                                                <a class="btn btn-primary" href="{{ path('app_houses', {'houses': 'hilde'}) }}">weitere Details</a>
+                                            </div>
+
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('build/images/cards/card_city.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Wohnung "City"</h4>
-                                            <p class="card-text">Eine Wohnung im ersten Stock, mit mehreren Monteurzimmern</p>
-                                            <ul>
-                                                <li>Einzel, sowie Doppelzimmer</li>
-                                                <li>Gemeinschaftsraum</li>
-                                                <li>Küche</li>
-                                                <li>Gemeinschaftsbadezimmer</li>
-                                            </ul>
-                                            <a class="btn btn-primary" href="{{ path('app_houses', {'houses': 'city'}) }}">weitere Details</a>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="{{ asset('build/images/cards/card_melina.jpg') }}">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Ferienwohnung "Melina"</h4>
+                                                <p class="card-text">Modern eingerichtete Ferienwohnung, mitten im Zentrum von Winsen</p>
+                                                <ul>
+                                                    <li>1 Schlafzimmer</li>
+                                                    <li>Gemeinschaftsraum</li>
+                                                    <li>Küche</li>
+                                                    <li>Badezimmer mit Dusche</li>
+                                                </ul>
+                                                <a class="btn btn-primary" href="{{ path('app_houses', {'houses': 'melina'}) }}">weitere Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="{{ asset('build/images/cards/card_city.jpg') }}">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Wohnung "City"</h4>
+                                                <p class="card-text">Eine Wohnung im ersten Stock, mit mehreren Monteurzimmern</p>
+                                                <ul>
+                                                    <li>Einzel, sowie Doppelzimmer</li>
+                                                    <li>Gemeinschaftsraum</li>
+                                                    <li>Küche</li>
+                                                    <li>Gemeinschaftsbadezimmer</li>
+                                                </ul>
+                                                <a class="btn btn-primary" href="{{ path('app_houses', {'houses': 'city'}) }}">weitere Details</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-4 mb-3">
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
 
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ asset('build/images/cards/card_e3.jpg') }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Haus "E3"</h4>
-                                            <p class="card-text">Ferienwohnung, mitten im Zentrum von Winsen</p>
-                                            <ul>
-                                                <li>1 Schlafzimmer</li>
-                                                <li>Gemeinschaftsraum</li>
-                                                <li>Küche</li>
-                                                <li>Badezimmer mit Dusche</li>
-                                            </ul>
-                                            <a class="btn btn-primary" href="{{ path('app_houses', {'houses': 'e3'}) }}">weitere Details</a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="{{ asset('build/images/cards/card_e3.jpg') }}">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Haus "E3"</h4>
+                                                <p class="card-text">Ferienwohnung, mitten im Zentrum von Winsen</p>
+                                                <ul>
+                                                    <li>1 Schlafzimmer</li>
+                                                    <li>Gemeinschaftsraum</li>
+                                                    <li>Küche</li>
+                                                    <li>Badezimmer mit Dusche</li>
+                                                </ul>
+                                                <a class="btn btn-primary" href="{{ path('app_houses', {'houses': 'e3'}) }}">weitere Details</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-          
-                                </div>
+                                    <div class="col-md-4 mb-3">
 
+                                    </div>
+
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>

@@ -14,7 +14,8 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-    }}
+    }
+
 </style>
 {% endblock %}
 
@@ -25,13 +26,49 @@
             <div class="col house-header justify-content-center">
                 <div class="header-balken">
                     <div class="row">
-                        <div class="col align-middle justify-content-center text-center"><span>Zimmer</span><br><span style="color:darkred">Celle</span></div>
+                        <div class="col align-middle justify-content-center text-center"><span style="word-break: break-all; padding-left: 20px; padding-right: 20px">{{ house.displayname }}</span></div>
                     </div>
                 </div>
             </div>
-            {{ dump(house) }}
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title display-4">{{ house.displayname }}</h2>
+                        <p class="card-text">{{  house.text|nl2br }}</p>
+                        <a href="#buchung" class="btn btn-primary">Jetzt buchen</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h2 class="display-2 mb-4 mt-3">Bildergalerie</h2>
+            <div class="row">
+                {% for picture in housepictures %}
+                <div class="col-md-2">
+                    <a href="{{ asset('build/images/houses/' ~ picture.house.housename ~ '/' ~ picture.picturepath ) }}" data-toggle="modal" data-target="#exampleModal">
+                        <img src="{{ asset('build/images/houses/' ~ picture.house.housename ~ '/' ~ picture.picturepath ) }}" class="img-fluid img-house mt-4">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
 
         </div>
+
+        <div class="container" id="buchung">
+            <div class="row justify-content-start">
+                <h2 class="display-2 mb-4 mt-3">Buchungsanfrage</h2>
+                <div class="col-4">
+                    {{ form_start(anfrageform) }}
+                    {{ form_widget(anfrageform) }}
+                    <button class="btn btn-primary mt-3" type="submit">Buchungsanfrage abschicken</button>
+                    {{ form_end(anfrageform) }}
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 

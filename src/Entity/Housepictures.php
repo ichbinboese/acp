@@ -23,6 +23,9 @@ class Housepictures
     #[ORM\JoinColumn(nullable: false)]
     private ?Houses $house = null;
 
+    #[ORM\Column(length: 11)]
+    private ?int $sort = null;
+
 
     public function getId(): ?int
     {
@@ -61,6 +64,18 @@ class Housepictures
     public function setHouse(?Houses $house): self
     {
         $this->house = $house;
+
+        return $this;
+    }
+
+    public function getSort(): ?int
+    {
+        return $this->sort;
+    }
+
+    public function setSort(int $sort): self
+    {
+        $this->sort = $sort;
 
         return $this;
     }

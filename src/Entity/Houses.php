@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\HousesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: HousesRepository::class)]
@@ -27,9 +28,20 @@ class Houses
     #[ORM\OneToMany(mappedBy: 'house', targetEntity: Housepictures::class, orphanRemoval: true)]
     private Collection $housepictures;
 
+    #[ORM\OneToMany(mappedBy: 'house', targetEntity: Anfrage::class)]
+    private Collection $anfrages;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $displayname = 'Haus';
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $text = null;
+
+
     public function __construct()
     {
         $this->housepictures = new ArrayCollection();
+        $this->anfrages = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -99,6 +111,60 @@ class Houses
                 $housepicture->setHouse(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Anfrage>
+     */
+    public function getAnfrages(): Collection
+    {
+        return $this->anfrages;
+    }
+
+    public function addAnfrage(Anfrage $anfrage): self
+    {
+        if (!$this->anfrages->contains($anfrage)) {
+            $this->anfrages->add($anfrage);
+            $anfrage->setHouse($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnfrage(Anfrage $anfrage): self
+    {
+        if ($this->anfrages->removeElement($anfrage)) {
+            // set the owning side to null (unless already changed)
+            if ($anfrage->getHouse() === $this) {
+                $anfrage->setHouse(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getDisplayname(): ?string
+    {
+        return $this->displayname;
+    }
+
+    public function setDisplayname(string $displayname): self
+    {
+        $this->displayname = $displayname;
+
+        return $this;
+    }
+
+    public function getText(): ?string
+    {
+        return $this->text;
+    }
+
+    public function setText(?string $text): self
+    {
+        $this->text = $text;
 
         return $this;
     }
